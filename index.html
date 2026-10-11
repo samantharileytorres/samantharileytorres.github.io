@@ -10,6 +10,8 @@
 
   <style>
 
+    /* COLORS */
+
     :root {
       --cream: #F5F0E5;
       --brown: #493528;
@@ -31,7 +33,8 @@
       font-family: Georgia, serif;
     }
 
-    /* NAVIGATION */
+
+    /* NAVIGATION BAR */
 
     nav {
       position: relative;
@@ -63,15 +66,18 @@
       opacity: 0.6;
     }
 
-    /* PLUMERIA */
+
+    /* PINK PLUMERIA HOME BUTTON */
 
     .flower-link {
       display: flex;
       justify-content: center;
       align-items: center;
+
       width: 50px;
       height: 50px;
       justify-self: center;
+
       transition: transform 0.3s ease;
     }
 
@@ -86,75 +92,47 @@
     }
 
 
-    
-/* CONTINUOUS PHOTO STORY */
+    /* FULL-SCREEN HOMEPAGE PHOTO */
 
-.photo-story {
-  position: relative;
-  width: 100%;
-}
+    .hero {
+      min-height: calc(100vh - 85px);
+      min-height: calc(100svh - 85px);
+      width: 100%;
 
-.photo-background {
-  position: relative;
-  width: 100%;
-}
+      background-image:
+        linear-gradient(
+          rgba(0,0,0,0.08),
+          rgba(0,0,0,0.18)
+        ),
+        url("images/homepage.JPG");
 
-.photo-background img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
 
-/* DARKEN PHOTO SLIGHTLY FOR TEXT */
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-.photo-background::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.18);
-  pointer-events: none;
-}
+      padding: 80px 10%;
+      text-align: center;
+    }
 
-/* TEXT OVER THE PHOTO */
+    .hero h1 {
+      color: var(--cream);
+      font-family: Georgia, serif;
+      font-size: clamp(32px, 5vw, 70px);
+      font-weight: normal;
+      font-style: italic;
+      line-height: 1.3;
+      max-width: 900px;
+      margin: 0;
 
-.story-writing {
-  position: absolute;
-  inset: 0;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-
-  padding: 5% 10%;
-  z-index: 2;
-}
-
-.story-sentence {
-  width: 100%;
-  min-height: 100vh;
-  min-height: 100svh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.story-sentence p {
-  color: #F5F0E5;
-  font-size: clamp(28px, 4vw, 58px);
-  font-weight: normal;
-  font-style: italic;
-  line-height: 1.5;
-  max-width: 900px;
-  margin: 0;
-  text-shadow: 0 2px 12px rgba(0,0,0,0.45);
-}
+      text-shadow: 0 2px 12px rgba(0,0,0,0.25);
+    }
 
 
-
-    /* ABOUT */
+    /* ABOUT SECTION */
 
     .about {
       display: grid;
@@ -177,6 +155,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
+
       padding: 70px 12%;
       color: var(--brown);
     }
@@ -194,7 +173,8 @@
       margin: 0 0 20px;
     }
 
-    /* MOBILE */
+
+    /* MOBILE DESIGN */
 
     @media (max-width: 700px) {
 
@@ -219,12 +199,12 @@
         height: 38px;
       }
 
-      .story-sentence {
-        padding: 60px 8%;
+      .hero {
+        min-height: 85svh;
       }
 
-      .story-sentence p {
-        font-size: clamp(24px, 6vw, 36px);
+      .hero h1 {
+        font-size: 36px;
       }
 
       .about {
@@ -247,10 +227,12 @@
       .about-text p {
         font-size: 16px;
       }
+
     }
 
   </style>
 </head>
+
 
 <body>
 
@@ -279,7 +261,8 @@
       INSPIRATION
     </a>
 
-    <!-- PINK FLOWER -->
+
+    <!-- PINK PLUMERIA FLOWER -->
 
     <a href="index.html"
        class="flower-link"
@@ -327,50 +310,25 @@
 
   </nav>
 
+
   <main>
 
-    <!-- ONE CONTINUOUS PHOTO -->
+    <!-- FULL-SCREEN HOMEPAGE PHOTO -->
 
-    <section class="photo-story">
+    <section class="hero">
 
-      <div class="photo-background">
-
-        <img
-          src="images/homepage.JPG"
-          alt="Homepage landscape photograph"
-        >
-
-      </div>
-
-      <!-- THREE FULL-SCREEN SENTENCES -->
-
-      <div class="story-writing">
-
-        <div class="story-sentence">
-          <p>
-            sentence 1
-          </p>
-        </div>
-
-        <div class="story-sentence">
-          <p>
-            sentence 2 
-          </p>
-        </div>
-
-        <div class="story-sentence">
-          <p>
-            sentence 3 
-          </p>
-        </div>
-
-      </div>
+      <h1>
+        intro 
+      </h1>
 
     </section>
+
 
     <!-- ABOUT SECTION -->
 
     <section class="about" id="about">
+
+      <!-- PHOTO ON LEFT -->
 
       <img
         src="images/about.JPG"
@@ -378,20 +336,25 @@
         class="about-photo"
       >
 
+
+      <!-- WRITING ON RIGHT -->
+
       <div class="about-text">
 
-        <h2>hello, i'm sam.</h2>
+        <h2>
+          hello, i'm sam.
+        </h2>
 
         <p>
-          fill in
-        </p>
-
-        <p>
-          fill in
+          fill in 
         </p>
 
         <p>
           
+        </p>
+
+        <p>
+         
         </p>
 
       </div>
